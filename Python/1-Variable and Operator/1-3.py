@@ -1,27 +1,49 @@
+# 列表的可变和元组的不可变
 
-a = [1, 2, 3]
-print(id(a))
-a[0] = 1
-print(id(a))
-# 修改list里面的值，id不会变化
+a = 3 / 2
+# 1.5
+a = 3 // 2
+# 1
+c = 3 % 2
+# 1
+d = 2 ** 5
+# 32
 
-a = (1, 2, 3)
-# a[0] = 1这句话直接报错
+# 元组和列表也可以比较
 
 
-b = [1, 2, 3, 4]
-b.append(7)
-print(b)
+print(1 and 0)
+print(1 or 0)
+print('a' and 'b')
 
-# 从上面的例子可以看出明显list列表的作用要比tuple作用大很多但是为什么还是会有元组类型呢
-# 原因在于在大型的系统中不是所有的程序都有一个人完成，所以就需要有元组这样不可改变的数据类型进行保障，避免了隐藏的错误
-# 所以在实际的编程过程中尽量能用元组优先使用元组
+a = 1
+print(a in [1, 2, 3, 4])
+# True
 
-c = (1, 2, 3, [1, 23, 4])
-# 如何访问元组中的列表要打印这个4
 
-c[3][2] = 5
-print(c[3][2])
+# Difference between "==" and  "is"
+a = 787878
+b = 787878
+print(1 == 1.0)
+print(1 is 1.0)
+print('----------------')
+print(a is b)
+'''
+== depends on the value
+is compares the id 
+a = {1,2,3} b = {2,1,3}
+a == b -> True               a is b -> False 
 
-# 对元组内部的列表是可以修改的
+c = (1,2,3) d = (2,1,3)
+c == d False 
+c is d False
+
+
+Obtain the type of the object. 
+1. type(a) == int  cannot used to judge the subtype.
+2. isinstance(a, int)
+    2.1 isinstance(a,(int, str, float)) 
+    
+Three feature of the object： id value type
+'''
 
